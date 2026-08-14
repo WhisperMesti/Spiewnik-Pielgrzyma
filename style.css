@@ -91,11 +91,25 @@ body {
   gap: 12px;
 }
 
-#back-btn {
-  background: none;
+.song-header h1 {
+  flex: 1;
+  font-size: 18px;
+}
+
+.font-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.font-controls button {
+  background: rgba(255, 255, 255, 0.15);
   border: none;
   color: white;
-  font-size: 22px;
+  font-size: 16px;
+  font-weight: 600;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
 }
 
 .song-lyrics {
@@ -103,4 +117,6 @@ body {
   font-size: 18px;
   line-height: 1.7;
   white-space: pre-wrap;
+  max-width: 640px;
+  margin: 0 auto;
 }

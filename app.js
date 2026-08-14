@@ -7,6 +7,23 @@ const pageGoBtn = document.getElementById('page-go-btn');
 const backBtn = document.getElementById('back-btn');
 const songTitleEl = document.getElementById('song-title');
 const songLyricsEl = document.getElementById('song-lyrics');
+const fontSmallerBtn = document.getElementById('font-smaller-btn');
+const fontBiggerBtn = document.getElementById('font-bigger-btn');
+
+let fontSize = 18; // starting size in px, matches CSS default
+const FONT_MIN = 14;
+const FONT_MAX = 28;
+const FONT_STEP = 2;
+
+function applyFontSize() {
+  songLyricsEl.style.fontSize = fontSize + 'px';
+}
+
+function changeFontSize(delta) {
+  fontSize = Math.min(FONT_MAX, Math.max(FONT_MIN, fontSize + delta));
+  applyFontSize();
+  localStorage.setItem('songbook-font-size', fontSize);
+}
 
 // Render the list of songs (filtered or full)
 function renderList(filter = '') {
@@ -28,6 +45,7 @@ function renderList(filter = '') {
 function openSong(song) {
   songTitleEl.textContent = song.title;
   songLyricsEl.textContent = song.lyrics;
+  applyFontSize();
   listScreen.classList.remove('active');
   songScreen.classList.add('active');
   window.scrollTo(0, 0);
@@ -58,5 +76,11 @@ pageInput.addEventListener('keydown', (e) => {
 });
 backBtn.addEventListener('click', goBack);
 
-// Initial render
+const savedFontSize = localStorage.getItem('songbook-font-size');
+if (savedFontSize) fontSize = parseInt(savedFontSize, 10);
+
 renderList();
+
+fontSmallerBtn.addEventListener('click', () => changeFontSize(-FONT_STEP));
+fontBiggerBtn.addEventListener('click', () => changeFontSize(FONT_STEP));
+
