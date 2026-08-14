@@ -9,6 +9,7 @@ const songTitleEl = document.getElementById('song-title');
 const songLyricsEl = document.getElementById('song-lyrics');
 const fontSmallerBtn = document.getElementById('font-smaller-btn');
 const fontBiggerBtn = document.getElementById('font-bigger-btn');
+const maxPageNumber = Math.max(...songs.map(s => s.number));
 
 let fontSize = 18; // starting size in px, matches CSS default
 const FONT_MIN = 14;
@@ -25,6 +26,15 @@ function changeFontSize(delta) {
   localStorage.setItem('songbook-font-size', fontSize);
 }
 
+pageInput.setAttribute('max', maxPageNumber);
+
+pageInput.addEventListener('input', () => {
+  let val = parseInt(pageInput.value, 10);
+  if (isNaN(val)) return;
+  if (val < 1) pageInput.value = 1;
+  if (val > maxPageNumber) pageInput.value = maxPageNumber;
+});
+
 // Render the list of songs (filtered or full)
 function renderList(filter = '') {
   const normalized = filter.trim().toLowerCase();
@@ -33,6 +43,12 @@ function renderList(filter = '') {
   );
 
   songListEl.innerHTML = '';
+
+  if (filtered.length === 0) {
+    songListEl.innerHTML = '<li class="empty-state" style="background:none;box-shadow:none;">Nie znaleziono piosenki.</li>';
+    return;
+  }
+
   filtered.forEach(song => {
     const li = document.createElement('li');
     li.innerHTML = `<span class="num">${song.number}</span><span>${song.title}</span>`;
@@ -83,4 +99,12 @@ renderList();
 
 fontSmallerBtn.addEventListener('click', () => changeFontSize(-FONT_STEP));
 fontBiggerBtn.addEventListener('click', () => changeFontSize(FONT_STEP));
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js')
+      .then(() => console.log('Service worker registered — offline mode ready.'))
+      .catch((err) => console.error('Service worker registration failed:', err));
+  });
+}
 

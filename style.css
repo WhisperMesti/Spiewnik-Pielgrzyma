@@ -4,10 +4,23 @@
   padding: 0;
 }
 
+:root {
+  --brown-dark: #4a2f1f;
+  --brown: #6b4226;
+  --brown-light: #8a5a3a;
+  --cream: #faf6f0;
+  --cream-card: #ffffff;
+  --text-main: #2b2320;
+  --text-muted: #8a7f75;
+  --border: #ece5dc;
+  --accent: #c8873a;
+}
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background: #faf8f5;
-  color: #222;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--cream);
+  color: var(--text-main);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .screen {
@@ -17,33 +30,53 @@ body {
 
 .screen.active {
   display: block;
+  animation: fadeIn 0.2s ease;
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Header */
 .app-header {
-  padding: 20px 16px;
-  background: #6b4226;
+  padding: max(20px, env(safe-area-inset-top)) 20px 18px;
+  background: linear-gradient(135deg, var(--brown-dark), var(--brown));
   color: white;
 }
 
 .app-header h1 {
-  font-size: 20px;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
 }
 
+/* Search area */
 .search-area {
-  padding: 12px 16px;
+  padding: 16px 20px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  background: white;
-  border-bottom: 1px solid #eee;
+  gap: 10px;
+  background: var(--cream);
+  position: sticky;
+  top: 0;
+  z-index: 5;
 }
 
 #search-input {
   width: 100%;
-  padding: 12px 14px;
+  padding: 14px 16px;
   font-size: 16px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  background: var(--cream-card);
+  color: var(--text-main);
+}
+
+#search-input:focus {
+  outline: none;
+  border-color: var(--accent);
 }
 
 .page-jump {
@@ -53,38 +86,74 @@ body {
 
 #page-input {
   flex: 1;
-  padding: 12px 14px;
+  padding: 14px 16px;
   font-size: 16px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  background: var(--cream-card);
+  min-width: 0;
+}
+
+#page-input:focus {
+  outline: none;
+  border-color: var(--accent);
 }
 
 #page-go-btn {
-  padding: 12px 18px;
-  font-size: 16px;
-  background: #6b4226;
+  padding: 14px 22px;
+  font-size: 15px;
+  font-weight: 600;
+  background: var(--brown);
   color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
+  white-space: nowrap;
 }
 
+#page-go-btn:active {
+  background: var(--brown-dark);
+}
+
+/* Song list */
 .song-list {
   list-style: none;
+  padding: 0 20px 40px;
 }
 
 .song-list li {
-  padding: 16px;
-  border-bottom: 1px solid #eee;
+  padding: 17px 4px;
   display: flex;
-  gap: 12px;
-  font-size: 17px;
+  align-items: center;
+  gap: 16px;
+  font-size: 16.5px;
+  font-weight: 500;
+  border-bottom: 1px solid var(--border);
+}
+
+.song-list li:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.song-list li:active {
+  background: #f4ede4;
 }
 
 .song-list li .num {
-  color: #999;
+  color: var(--accent);
+  font-weight: 700;
   min-width: 28px;
+  font-size: 15px;
 }
 
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+/* Reading screen */
 .song-header {
   display: flex;
   align-items: center;
@@ -93,30 +162,62 @@ body {
 
 .song-header h1 {
   flex: 1;
-  font-size: 18px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+#back-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: white;
+  font-size: 20px;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  flex-shrink: 0;
 }
 
 .font-controls {
   display: flex;
   gap: 6px;
+  flex-shrink: 0;
 }
 
 .font-controls button {
   background: rgba(255, 255, 255, 0.15);
   border: none;
   color: white;
-  font-size: 16px;
-  font-weight: 600;
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+}
+
+.font-controls button:active {
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .song-lyrics {
-  padding: 20px 16px;
+  padding: 28px 22px 60px;
+  font-family: 'Lora', Georgia, serif;
   font-size: 18px;
-  line-height: 1.7;
+  line-height: 1.8;
   white-space: pre-wrap;
   max-width: 640px;
   margin: 0 auto;
+  color: var(--text-main);
+}
+
+/* Tablet/desktop comfort */
+@media (min-width: 600px) {
+  .search-area, .song-list {
+    max-width: 640px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .app-header {
+    padding-left: max(20px, calc(50% - 320px + 20px));
+    padding-right: max(20px, calc(50% - 320px + 20px));
+  }
 }
