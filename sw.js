@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pilgrimage-songbook-v2';
+const CACHE_NAME = 'pilgrimage-songbook-v3';
 
 const FILES_TO_CACHE = [
   './',
