@@ -13,10 +13,10 @@ const fontSmallerBtn = document.getElementById('font-smaller-btn');
 const fontBiggerBtn = document.getElementById('font-bigger-btn');
 const maxPageNumber = Math.max(...songs.map(s => s.number));
 
-let fontSize = 1; 
-const FONT_MIN = 0.8;
-const FONT_MAX = 1.6;
-const FONT_STEP = 0.1;
+let fontScale = 1; 
+const SCALE_MIN = 0.8;
+const SCALE_MAX = 1.6;
+const SCALE_STEP = 0.1;
 
 function applyFontScale() {
   document.documentElement.style.setProperty('--font-scale', fontScale.toFixed(2));
@@ -115,13 +115,7 @@ pageInput.addEventListener('keydown', (e) => {
 });
 backBtn.addEventListener('click', goBack);
 
-const savedFontSize = localStorage.getItem('songbook-font-size');
-if (savedFontSize) fontSize = parseInt(savedFontSize, 10);
-
 renderList();
-
-fontSmallerBtn.addEventListener('click', () => changeFontSize(-FONT_STEP));
-fontBiggerBtn.addEventListener('click', () => changeFontSize(FONT_STEP));
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
