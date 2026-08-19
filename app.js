@@ -7,24 +7,37 @@ const pageGoBtn = document.getElementById('page-go-btn');
 const backBtn = document.getElementById('back-btn');
 const songTitleEl = document.getElementById('song-title');
 const songLyricsEl = document.getElementById('song-lyrics');
+const fontSmallerBtnMain = document.getElementById('font-smaller-btn-main');
+const fontBiggerBtnMain = document.getElementById('font-bigger-btn-main');
 const fontSmallerBtn = document.getElementById('font-smaller-btn');
 const fontBiggerBtn = document.getElementById('font-bigger-btn');
 const maxPageNumber = Math.max(...songs.map(s => s.number));
 
-let fontSize = 18; // starting size in px, matches CSS default
-const FONT_MIN = 14;
-const FONT_MAX = 28;
-const FONT_STEP = 2;
+let fontSize = 1; 
+const FONT_MIN = 0.8;
+const FONT_MAX = 1.6;
+const FONT_STEP = 0.1;
 
-function applyFontSize() {
-  songLyricsEl.style.fontSize = fontSize + 'px';
+function applyFontScale() {
+  document.documentElement.style.setProperty('--font-scale', fontScale.toFixed(2));
+  localStorage.setItem('songbook-font-scale', fontScale);
 }
 
-function changeFontSize(delta) {
-  fontSize = Math.min(FONT_MAX, Math.max(FONT_MIN, fontSize + delta));
-  applyFontSize();
-  localStorage.setItem('songbook-font-size', fontSize);
+function changeFontScale(delta) {
+  fontScale = Math.min(SCALE_MAX, Math.max(SCALE_MIN, +(fontScale + delta).toFixed(2)));
+  applyFontScale();
 }
+
+[fontSmallerBtnMain, fontSmallerBtn].forEach(btn =>
+  btn.addEventListener('click', () => changeFontScale(-SCALE_STEP))
+);
+[fontBiggerBtnMain, fontBiggerBtn].forEach(btn =>
+  btn.addEventListener('click', () => changeFontScale(SCALE_STEP))
+);
+
+const savedScale = localStorage.getItem('songbook-font-scale');
+if (savedScale) fontScale = parseFloat(savedScale);
+applyFontScale()
 
 pageInput.setAttribute('max', maxPageNumber);
 
@@ -61,10 +74,10 @@ function renderList(filter = '') {
 function openSong(song) {
   songTitleEl.textContent = song.title;
   songLyricsEl.textContent = song.lyrics;
-  applyFontSize();
   listScreen.classList.remove('active');
   songScreen.classList.add('active');
   window.scrollTo(0, 0);
+  history.pushState({ screen: 'song' }, '', '#song');
 }
 
 // Go back to the list
@@ -72,6 +85,16 @@ function goBack() {
   songScreen.classList.remove('active');
   listScreen.classList.add('active');
 }
+
+// Tapping the on-screen back arrow now goes through the same history mechanism
+backBtn.addEventListener('click', () => {
+  history.back();
+});
+
+// Phone's built-in back button/gesture triggers this automatically
+window.addEventListener('popstate', () => {
+  goBack();
+});
 
 // Jump directly to a song by page number
 function goToPage() {

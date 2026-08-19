@@ -6,12 +6,14 @@ const songs = [
 Przyjdzie mi pomoc;
 Pomoc od Pana, wszak Bogiem On
 Miłosiernym jest!
+
 2. Kiedy zbłądzimy, sam szuka nas,
 By w swe ramiona wziąć,
 Rany uleczyć Krwią swoich ran,
 Nowe życie tchnąć!
 Błogosławieni miłosierni,
 albowiem oni miłosierdzia dostąpią!
+
 3. Gdyby nam Pan nie odpuścił win,
 Któż ostać by się mógł?
 Lecz On przebacza, przeto i my
@@ -24,6 +26,7 @@ Czyńmy jak nasz Bóg!`
 Króluje nad nami dziś 
 Z nieba rządzi w Mocy, 
 Mądrości, Miłości swej 
+
 2.Jesteś życiem mym, więc każdy
 ruch robię w Tobie Jezu
 Ty pozwalasz wciąż oddychać mi.
