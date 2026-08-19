@@ -108,3 +108,78 @@ if ('serviceWorker' in navigator) {
   });
 }
 
+const installBtn = document.getElementById('install-btn');
+const installModal = document.getElementById('install-modal');
+const installModalClose = document.getElementById('install-modal-close');
+const installTriggerBtn = document.getElementById('install-trigger-btn');
+const stepsIOS = document.getElementById('install-steps-ios');
+const stepsAndroid = document.getElementById('install-steps-android');
+const stepsGeneric = document.getElementById('install-steps-generic');
+
+let deferredInstallPrompt = null;
+
+function isStandalone() {
+  return window.matchMedia('(display-mode: standalone)').matches
+    || window.navigator.standalone === true;
+}
+
+function isIOS() {
+  return /iPad|iPhone|iPod/.test(navigator.userAgent)
+    || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+}
+
+// Capture Chrome/Android's native install prompt when it becomes available
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredInstallPrompt = e;
+  if (!isStandalone()) {
+    installBtn.style.display = 'inline-block';
+  }
+});
+
+function openInstallModal() {
+  stepsIOS.style.display = 'none';
+  stepsAndroid.style.display = 'none';
+  stepsGeneric.style.display = 'none';
+
+  if (isIOS()) {
+    stepsIOS.style.display = 'block';
+  } else if (deferredInstallPrompt) {
+    stepsAndroid.style.display = 'block';
+  } else {
+    stepsGeneric.style.display = 'block';
+  }
+  installModal.style.display = 'flex';
+}
+
+function closeInstallModal() {
+  installModal.style.display = 'none';
+}
+
+installBtn.addEventListener('click', openInstallModal);
+installModalClose.addEventListener('click', closeInstallModal);
+installModal.addEventListener('click', (e) => {
+  if (e.target === installModal) closeInstallModal();
+});
+
+installTriggerBtn.addEventListener('click', async () => {
+  if (!deferredInstallPrompt) return;
+  deferredInstallPrompt.prompt();
+  await deferredInstallPrompt.userChoice;
+  deferredInstallPrompt = null;
+  closeInstallModal();
+  installBtn.style.display = 'none';
+});
+
+// Show the button on load if not already installed
+// (iOS/other browsers won't fire beforeinstallprompt, so we show it manually there too)
+if (!isStandalone()) {
+  installBtn.style.display = 'inline-block';
+}
+
+// Hide it immediately if the app gets installed while open
+window.addEventListener('appinstalled', () => {
+  installBtn.style.display = 'none';
+  deferredInstallPrompt = null;
+});
+

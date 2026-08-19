@@ -24,8 +24,11 @@
   <!-- MAIN SCREEN: song list -->
   <div id="list-screen" class="screen active">
     <header class="app-header">
-      <h1>Śpiewnik Pielgrzyma</h1>
-    </header>
+  <h1>Śpiewnik Pielgrzyma</h1>
+  <button id="install-btn" class="install-btn" style="display:none;">
+    ⬇ Zainstaluj aplikację
+  </button>
+</header>
 
     <div class="search-area">
       <input
@@ -38,7 +41,7 @@
         <input
             type="number"
             id="page-input"
-            placeholder="Nr strony"
+            placeholder="Nr piosenki"
             inputmode="numeric"
             min="1"
         />
@@ -64,5 +67,40 @@
 
   <script src="songs/songs.js"></script>
   <script src="app.js"></script>
+  <!-- Install instructions modal -->
+<div id="install-modal" class="modal-overlay" style="display:none;">
+  <div class="modal-box">
+    <button id="install-modal-close" class="modal-close" aria-label="Zamknij">&times;</button>
+    <h2>Jak zainstalować Śpiewnik</h2>
+
+    <div id="install-steps-ios" class="install-steps" style="display:none;">
+      <p>Na iPhonie / iPadzie (w przeglądarce Safari):</p>
+      <ol>
+        <li>Stuknij ikonę <strong>Udostępnij</strong> (kwadrat ze strzałką w górę) na dole ekranu</li>
+        <li>Przewiń listę i wybierz <strong>„Dodaj do ekranu początkowego”</strong></li>
+        <li>Stuknij <strong>„Dodaj”</strong> w prawym górnym rogu</li>
+      </ol>
+      <p class="modal-note">Gotowe! Ikona Śpiewnika pojawi się na ekranie głównym, tak jak zwykła aplikacja.</p>
+    </div>
+
+    <div id="install-steps-android" class="install-steps" style="display:none;">
+      <p>Na Androidzie:</p>
+      <ol>
+        <li>Stuknij przycisk <strong>„Zainstaluj aplikację”</strong> poniżej</li>
+        <li>Potwierdź, stukając <strong>„Zainstaluj”</strong> w oknie, które się pojawi</li>
+      </ol>
+      <button id="install-trigger-btn" class="install-btn install-btn-modal">⬇ Zainstaluj aplikację</button>
+    </div>
+
+    <div id="install-steps-generic" class="install-steps" style="display:none;">
+      <p>W Twojej przeglądarce:</p>
+      <ol>
+        <li>Otwórz menu przeglądarki (zwykle trzy kropki lub linie w rogu ekranu)</li>
+        <li>Poszukaj opcji <strong>„Dodaj do ekranu głównego”</strong> lub <strong>„Zainstaluj aplikację”</strong></li>
+      </ol>
+      <p class="modal-note">Jeśli nie widzisz takiej opcji, możesz też po prostu zapisać tę stronę w zakładkach — Śpiewnik będzie działał normalnie również w przeglądarce, także bez internetu.</p>
+    </div>
+  </div>
+</div>
 </body>
 </html>
