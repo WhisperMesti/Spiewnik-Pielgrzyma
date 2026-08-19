@@ -13,7 +13,8 @@ const fontSmallerBtn = document.getElementById('font-smaller-btn');
 const fontBiggerBtn = document.getElementById('font-bigger-btn');
 const maxPageNumber = Math.max(...songs.map(s => s.number));
 
-let fontScale = 1; 
+// ---- Font size (shared between list and reading screen) ----
+let fontScale = 1;
 const SCALE_MIN = 0.8;
 const SCALE_MAX = 1.6;
 const SCALE_STEP = 0.1;
@@ -37,8 +38,9 @@ function changeFontScale(delta) {
 
 const savedScale = localStorage.getItem('songbook-font-scale');
 if (savedScale) fontScale = parseFloat(savedScale);
-applyFontScale()
+applyFontScale();
 
+// ---- Page number jump ----
 pageInput.setAttribute('max', maxPageNumber);
 
 pageInput.addEventListener('input', () => {
@@ -48,7 +50,7 @@ pageInput.addEventListener('input', () => {
   if (val > maxPageNumber) pageInput.value = maxPageNumber;
 });
 
-// Render the list of songs (filtered or full)
+// ---- Song list rendering ----
 function renderList(filter = '') {
   const normalized = filter.trim().toLowerCase();
   const filtered = songs.filter(s =>
@@ -70,7 +72,7 @@ function renderList(filter = '') {
   });
 }
 
-// Open a single song's reading screen
+// ---- Screen navigation ----
 function openSong(song) {
   songTitleEl.textContent = song.title;
   songLyricsEl.textContent = song.lyrics;
@@ -80,23 +82,20 @@ function openSong(song) {
   history.pushState({ screen: 'song' }, '', '#song');
 }
 
-// Go back to the list
 function goBack() {
   songScreen.classList.remove('active');
   listScreen.classList.add('active');
 }
 
-// Tapping the on-screen back arrow now goes through the same history mechanism
 backBtn.addEventListener('click', () => {
   history.back();
 });
 
-// Phone's built-in back button/gesture triggers this automatically
 window.addEventListener('popstate', () => {
   goBack();
 });
 
-// Jump directly to a song by page number
+// ---- Jump to song by number ----
 function goToPage() {
   const num = parseInt(pageInput.value, 10);
   const found = songs.find(s => s.number === num);
@@ -113,10 +112,10 @@ pageGoBtn.addEventListener('click', goToPage);
 pageInput.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') goToPage();
 });
-backBtn.addEventListener('click', goBack);
 
 renderList();
 
+// ---- Offline support ----
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('./sw.js')
@@ -125,6 +124,7 @@ if ('serviceWorker' in navigator) {
   });
 }
 
+// ---- Install button + instructions modal ----
 const installBtn = document.getElementById('install-btn');
 const installModal = document.getElementById('install-modal');
 const installModalClose = document.getElementById('install-modal-close');
@@ -145,7 +145,6 @@ function isIOS() {
     || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 }
 
-// Capture Chrome/Android's native install prompt when it becomes available
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   deferredInstallPrompt = e;
@@ -188,15 +187,11 @@ installTriggerBtn.addEventListener('click', async () => {
   installBtn.style.display = 'none';
 });
 
-// Show the button on load if not already installed
-// (iOS/other browsers won't fire beforeinstallprompt, so we show it manually there too)
 if (!isStandalone()) {
   installBtn.style.display = 'inline-block';
 }
 
-// Hide it immediately if the app gets installed while open
 window.addEventListener('appinstalled', () => {
   installBtn.style.display = 'none';
   deferredInstallPrompt = null;
 });
-
