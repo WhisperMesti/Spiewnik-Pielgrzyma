@@ -1,12 +1,6 @@
 
 const songs = [
   {
-    number: 0,
-    title: "!!!Ogłoszenia!!!!",
-    lyrics: `Nie ma żadnych ogłoszeń i już nie będzie. 
-Wszystkie ogłoszenia bedą podawane na bieżąco`
-  },
-  {
     number: 1,
     title: "Abba,Ojcze",
     lyrics: `Ty wyzwoliłeś nas Panie
