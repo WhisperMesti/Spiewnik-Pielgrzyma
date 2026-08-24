@@ -1,16 +1,10 @@
+
 const songs = [
   {
     number: 0,
     title: "!!!Ogłoszenia!!!!",
-    lyrics: `1.Pielgrzymka rozpoczyna się mszą świetą 25.08.2026 o godzinie 06:00. Pielgrzymka rusza w drogę po mszy świetej
-
-2.Po dotarciu na Jasną Górę i pokłonieniu się Maryi w kaplicy udajemy się na mszę świetą w sali...
-
-3.Święto 26.08.2026 każdy organizuje sobie zgodnie z upodobaniem
-
-	4.Tab lub spacja przesuwają poczatek tekstu  w aplikacji
-  5.Pusta linia skutkuje pustą linia w aplikacji
-  6.Numeracja może być nie po kolei ale wtedy trzeba użyć wyszukwania numeru piosenki`
+    lyrics: `Nie ma żadnych ogłoszeń i już nie będzie. 
+Wszystkie ogłoszenia bedą podawane na bieżąco`
   },
   {
     number: 1,
@@ -63,7 +57,7 @@ Jego radość jest w sercu mym`
   },
   {
     number: 4,
-    title: "Alleluja,, On jest Światłem",
+    title: "Alleluja, On jest Światłem",
     lyrics: `A–a–a–alleluja. / x2
 On jest Światłem, On jest Drogą
 Prawdą, Życiem, Jezus Panem jest!`
@@ -191,8 +185,7 @@ Boża radość wypełnia duszę mą (alleluja).
   {
     number: 14,
     title: "Boże Twa łaska",
-    lyrics: `Boże Twa łaska
-Boże Twa łaska nad nami jest,
+    lyrics: `Boże Twa łaska nad nami jest,
 Twoja miłość przychodzi wciąż,
 Działa w mocy pośród nas,
 Przenika serca, gładzi grzech.
@@ -322,7 +315,7 @@ Rozdaj tym, którzy nie wierzą w swój głód.`
   {
     number: 24,
     title: "Chodziłem w grzechu całe dnie",
-    lyrics: `Chodziłem w grzechu całe dnie,
+    lyrics: `1.Chodziłem w grzechu całe dnie,
 Ty ukochałeś mnie. 
 Nadałeś memu życiu sens,
 więc śpiewam Tobie pieśń.
@@ -1038,7 +1031,7 @@ Po stopy me, po stopy me.`
   {
     number: 57,
     title: "Gdzie jesteś, Panie Boże, Ojcze mój?",
-    lyrics: `Gdzie jesteś, Panie Boże, Ojcze mój?
+    lyrics: `1. Gdzie jesteś, Panie Boże, Ojcze mój?
 W skrytości serca szukam Twoich dróg.
 O, usłysz głos wołania duszy mej,
 Odpowiedz mi miłością wielką swą.
@@ -1136,7 +1129,12 @@ K. Pani, wysłuchaj modlitwy nasze.
 W. A wołanie nasze niech do Ciebie przyjdzie.
 
 
-Módlmy się: Święta Maryjo, Królowo Niebieska, Matko Pana naszego Jezusa Chrystusa i Pani świata, która nikogo nie opuszczasz i nikim nie gardzisz, wejrzyj na nas, Pani nasza, łaskawym okiem miłosierdzia Swego i uproś nam u Syna Swego miłego odpuszczenie wszystkich grzechów naszych, abyśmy, którzy teraz święte Twoje Niepokalane Poczęcie nabożnym sercem rozpamiętywamy, wiecznego błogosławieństwa zapłatę w Niebie otrzymać mogli, co niechaj da Ten, któregoś Ty Panno, porodziła, Syn Twój, a Pan nasz Jezus Chrystus, który z Ojcem i Duchem Świętym żyje i króluje w Trójcy Świętej Jedyny, Bóg na wieki wieków.
+Módlmy się: Święta Maryjo, Królowo Niebieska, 
+Matko Pana naszego Jezusa Chrystusa i Pani świata, która nikogo nie opuszczasz i nikim nie gardzisz, 
+wejrzyj na nas, Pani nasza, łaskawym okiem miłosierdzia Swego i uproś nam u Syna Swego miłego odpuszczenie wszystkich grzechów naszych, 
+abyśmy, którzy teraz święte Twoje Niepokalane Poczęcie nabożnym sercem rozpamiętywamy, 
+wiecznego błogosławieństwa zapłatę w Niebie otrzymać mogli, co niechaj da Ten, któregoś Ty Panno, porodziła, Syn Twój, a Pan nasz Jezus Chrystus, 
+który z Ojcem i Duchem Świętym żyje i króluje w Trójcy Świętej Jedyny, Bóg na wieki wieków.
 
 W. Amen.
 K. Pani, wysłuchaj modlitwy nasze.
@@ -1146,7 +1144,7 @@ W. Bogu chwała.
 K. A dusze wiernych zmarłych przez miłosierdzie Boże niech odpoczywają w pokoju.
 W. Amen.
 
--------------------------------------------
+-------------------------------------
 
 NA PRYMĘ
 Przybądź nam, miłościwa Pani, ku pomocy,
@@ -1175,7 +1173,7 @@ W. Bogu chwała.
 K. A dusze wiernych zmarłych przez miłosierdzie Boże niech odpoczywają w pokoju.
 W. Amen.
 
----------------------------------------------
+---------------------------------------
 
 NA TERCJĘ
 Przybądź nam, miłościwa Pani, ku pomocy,
@@ -1206,7 +1204,7 @@ W. Bogu chwała.
 K. A dusze wiernych zmarłych przez miłosierdzie Boże niech odpoczywają w pokoju.
 W. Amen.
 
-------------------------------------------------
+------------------------------------------
 
 NA SEKSTĘ
 Przybądź nam, miłościwa Pani, ku pomocy,
@@ -1235,7 +1233,7 @@ W. Bogu chwała.
 K. A dusze wiernych zmarłych przez miłosierdzie Boże niech odpoczywają w pokoju.
 W. Amen.
 
-------------------------------------------------
+------------------------------------------
 
 NA NONĘ
 Przybądź nam, miłościwa Pani, ku pomocy,
@@ -1264,7 +1262,7 @@ W. Bogu chwała.
 K. A dusze wiernych zmarłych przez miłosierdzie Boże niech odpoczywają w pokoju.
 W. Amen.
 
-------------------------------------------------
+------------------------------------------
 
 NA NIESZPORY
 Przybądź nam, miłościwa Pani, ku pomocy,
@@ -1293,7 +1291,7 @@ W. Bogu chwała.
 K. A dusze wiernych zmarłych przez miłosierdzie Boże niech odpoczywają w pokoju.
 W. Amen.
 
------------------------------------------------
+-----------------------------------------
 
 NA KOMPLETĘ
 Niech nas Syn Twój, o Pani, do Siebie nawróci,
@@ -1324,7 +1322,7 @@ W. Bogu chwała.
 K. A dusze wiernych zmarłych przez miłosierdzie Boże niech odpoczywają w pokoju.
 W. Amen.
 
-----------------------------------------------
+----------------------------------------
 
 OFIAROWANIE GODZINEK
 Z pokłonem, Panno Święta, ofiarujem Tobie
@@ -1402,7 +1400,7 @@ módl się za nami.`
   {
     number: 63,
     title: "Hej, Jezu, Królem Tyś",
-    lyrics: `Hej, Jezu, Królem Tyś /x2,
+    lyrics: `1. Hej, Jezu, Królem Tyś /x2,
 życie Twe uwalnia mnie /x2
 Będę sławił cały dzień, /x2
 doskonałe drogi Twe. /x2
@@ -1653,7 +1651,7 @@ On jest Królem całej ziemi tej.`
   {
     number: 77,
     title: "Jest na świecie Miłość",
-    lyrics: `Jest na świecie Miłość,
+    lyrics: `1. Jest na świecie Miłość,
 Której imię srebrzystym promieniem obiegło ziemię.
 Gdy ci będzie smutno
 Imię to wypowiedz, 
@@ -1731,7 +1729,7 @@ Twoja miłość złączyła nas, Twój krzyż.`
   {
     number: 80,
     title: "Jesteś blisko podtrzymujesz mnie",
-    lyrics: `Jesteś blisko podtrzymujesz mnie
+    lyrics: `1.Jesteś blisko podtrzymujesz mnie
 Z Tobą wszystko jasne jest jak w dzień
 krok za krokiem idę za światłem Twym
 by przed zmrokiem dotrzeć do nieba drzwi
@@ -1842,7 +1840,7 @@ Jezu jakże to możliwe jest?`
   {
     number: 86,
     title: "Jesteśmy Twymi dziećmi",
-    lyrics: `Jesteśmy Twymi dziećmi,
+    lyrics: `1.Jesteśmy Twymi dziećmi,
 Potrzebujemy Ciebie
 Miłości, która trwa
 Dobroci nieskończonej,
@@ -1918,7 +1916,7 @@ Jego życie chwałą nam`
   {
     number: 91,
     title: "Jezus i ja-Gdy szedłem raz sam",
-    lyrics: `Gdy szedłem raz sam, po drodze życia w dal
+    lyrics: `1.Gdy szedłem raz sam, po drodze życia w dal
 Me brzemię ciążyło, zmęczony duch łkał
 Tak chciałem, by ktoś
 był ze mną wśród bied
@@ -2278,7 +2276,7 @@ Czeka z otwartymi namionami x2`
   {
     number: 113,
     title: "Matka, która pod krzyżem stała",
-    lyrics: `Jeśli masz chwile smutne w swym życiu, 
+    lyrics: `1.Jeśli masz chwile smutne w swym życiu, 
 powierz się Matce
 Kiedy rozpacz rozdziera Twe serce
 ofiaruj się Jej
@@ -2464,7 +2462,7 @@ Będę, będę mieszkał razem z Panem mym`
   {
     number: 122,
     title: "Murarz wielkie domy stawia",
-    lyrics: `Murarz wielkie domy stawia, by gdzie mieszkać było. 
+    lyrics: `1. Murarz wielkie domy stawia, by gdzie mieszkać było. 
 Muzyk gra na instrumencie, by się lepiej żyło 
 Piekarz musi zaś pracować, by nie brakło chleba. 
 Anioł Stróż pilnuje duszy, by poszła do nieba 
@@ -2507,7 +2505,7 @@ Niech Boga wielbi Chrobry Lech.`
   },
   {
     number: 124,
-    title: "My chcemy Życia",
+    title: "My chcemy życia",
     lyrics: `W naszej braterskiej gromadzie,
 Nic nie stoi na zawadzie
 Na ustach uśmiech,
@@ -2535,7 +2533,7 @@ Bez tych złudnych mar.`
   {
     number: 125,
     title: "My Jego dzieci zrodzone z cierpienia",
-    lyrics: `My Jego dzieci zrodzone z cierpienia 
+    lyrics: `1.My Jego dzieci zrodzone z cierpienia 
 Krwią swoją odkupił nas
 chce mieć nas świętym światłem narodów 
 w miłość i moc przyodział nas.
@@ -2588,7 +2586,7 @@ Mądrości, Miłości swej `
   {
     number: 128,
     title: "Nic ci nie wyjdzie bez Chrystusa",
-    lyrics: `Człowiek jest dobry i silny,
+    lyrics: `1. Człowiek jest dobry i silny,
 miłość chce nieść po świecie.
 Lecz posłuchajcie tej prawdy,
 prawdy, o której już wiecie.
@@ -2753,7 +2751,7 @@ Jezus, tylko Jezus Panem jest.`
   {
     number: 139,
     title: "Niepokalana daj mi tylko swoje imię",
-    lyrics: `Wiedząc, że dzieckiem jestem
+    lyrics: `1.Wiedząc, że dzieckiem jestem
 I że słabe moje dłonie,
 Ona kazała, abym miłość światu niósł.
 A ja poszedłem za Nią,
@@ -2868,10 +2866,11 @@ Już teraz we mnie Twe królestwo jest`
   {
     number: 147,
     title: "On i ja, On jest moim Bogiem",
-    lyrics: `On i ja, On jest moim Bogiem,
+    lyrics: `Ref.:On i ja, On jest moim Bogiem,
 On i ja, każdy Mu odpowie.
 On i ja, On jest taki dobry,
 On i ja świat jest z Nim cudowny.
+
 1.Jezus moim jest przyjacielem,
 moje życie jest z Nim radosne,
 Wiem, że mnie kocha i nie opuści,
@@ -3061,7 +3060,7 @@ To owoc całego ziemskiego czekania.`
   {
     number: 159,
     title: "Pewnej nocy łzy z oczu mych",
-    lyrics: `Pewnej nocy łzy z oczu mych
+    lyrics: `1. Pewnej nocy łzy z oczu mych
 otarł dłonią swą Jezus
 I powiedział mi: Nie martw się,
 jam przy boku jest twym.
@@ -3817,7 +3816,7 @@ Miej w sobie tę ufność Nie lękaj się`
   {
     number: 199,
     title: "Ty wskazałeś drogę",
-    lyrics: `Ty wskazałeś drogę do miłości, Ty, Panie.
+    lyrics: `1.Ty wskazałeś drogę do miłości, Ty, Panie.
 Ty zmieniłeś świat swym Zmartwychwstaniem,
 Ty, Panie, Panie .
 REF. Tylko Ty jeden wiesz,
@@ -3833,7 +3832,7 @@ Choć mym oczom jesteś niewidoczny,`
   {
     number: 200,
     title: "Tyle dobrego zawdzięczam Tobie Panie",
-    lyrics: `Tyle dobrego zawdzięczam Tobie Panie,
+    lyrics: `1.Tyle dobrego zawdzięczam Tobie Panie,
 Wszystko co mam od Ciebie przecież jest,
 i to że jestem, że życie wciąż poznaję,
 dziś tymi słowy wyrazić wszystko chcę
@@ -3982,7 +3981,8 @@ Jezu wybaw nas`
   {
     number: 209,
     title: "Wielbić mego Pana chcę",
-    lyrics: `bo On godzien chwały jest 
+    lyrics: `Wielbić mego Pana chcę
+bo On godzien chwały jest 
 On uwalnia mnie sam od wrogów mych
 Mój Pan żyje Opoką moją jest 
 I niechaj będzie wywyższony mój Zbawiciel
@@ -4007,7 +4007,7 @@ Wielbij, wielbij Go, Imię Pana głoś.`
   {
     number: 211,
     title: "Wierzę w Ciebie Panie",
-    lyrics: `Wierzę w Ciebie Panie coś mnie obmył z win 
+    lyrics: `1.Wierzę w Ciebie Panie coś mnie obmył z win 
 wierzę że człowiekiem stał się Boży Syn 
 miłość Ci kazała krzyż na plecy brać 
 w Tabernakulum zostałeś aby z nami trwać 
@@ -4055,7 +4055,7 @@ nam! X 2`
   {
     number: 213,
     title: "Wspaniałą Matką zwą Ciebie ludzie",
-    lyrics: `Wspaniałą Matką zwą Ciebie ludzie, 
+    lyrics: `1. Wspaniałą Matką zwą Ciebie ludzie, 
 Biegną po pomoc w trosce i trudzie, 
 Bo Ty, bo Ty, bo Ty pomagasz nam.
 I patrzysz na nas czułym spojrzeniem, 
@@ -4103,7 +4103,7 @@ Uwielbi Go (uwielbi Go) cały świat.`
   {
     number: 215,
     title: "Wszystkie moje troski",
-    lyrics: `Wszystkie moje troski i kłopoty
+    lyrics: `1.Wszystkie moje troski i kłopoty
 W Twoje ręce składam, Panie mój.
 Bardzo cieszę się, że właśnie nas wybrałeś,
 Byśmy idąc nieśli imię Twe.
@@ -4119,7 +4119,7 @@ Uczysz mnie codziennie mądrości swoim słowem,
   {
     number: 216,
     title: "Wszystkie narody",
-    lyrics: `Wszystkie narody klaskajcie w dłonie 
+    lyrics: `1.Wszystkie narody klaskajcie w dłonie 
 Wykrzykujcie Bogu radosnym głosem, Bo Pan 
 najwyższym jest królem nad całą ziemią.
 
@@ -4134,7 +4134,7 @@ więc hymn śpiewajcie.`
   {
     number: 217,
     title: "Wśród tylu dróg",
-    lyrics: `Jak mocno serce biło mi, 
+    lyrics: `1.Jak mocno serce biło mi, 
 Gdym po raz pierwszy ujrzał obraz twój
 Spragniony łask, miłości Twej 
 Wołałem Matko wysłuchaj mnie
@@ -4174,7 +4174,7 @@ Jego wierność przez pokolenia`
   {
     number: 219,
     title: "Wzywam Cię",
-    lyrics: `Wzywam Cię, Duchu, przyjdź,
+    lyrics: `1.Wzywam Cię, Duchu, przyjdź,
 Czekam wciąż, byś dotknął nas.
 Wołam Cię, Panie, przyjdź,
 Jezu, Zbawco, do dzieci Twych.
@@ -4278,7 +4278,7 @@ Broń nas od wojny, Zdrowaś Maryja!`
   {
     number: 223,
     title: "Ziemia, którą mi dajesz",
-    lyrics: `Ziemia, którą mi dajesz
+    lyrics: `1.Ziemia, którą mi dajesz
 Nie jest fikcją ani bajką
 Wolność, którą mam w Tobie jest prawdziwa
 Wszystkie góry na drodze 
@@ -4334,5 +4334,30 @@ Bo niosą nam radosną wieść, tę wieść:
 Pokoju dar, wśród życia dróg przychodzi już
 Władać Bóg, Królem Bóg, Królem Bóg,
 Królem Bóg, Królem Bóg, Królem Bóg.`
+  },
+{
+    number: 226,
+    title: "Pewnego dnia Noe",
+    lyrics: `1.Pewnego dnia Noe do lasu szedł,
+by zebrać wokół siebie wszystkie zwierzęta,
+bo rozgniewany Pan Bóg chciał zesłać na świat potop
+lecz nie z winy zwierząt więc ocalił je.
+Ref. Tu stoją krokodyle i orangutany,
+dwa malutkie wężyki i królewski orzeł.
+I kot i mysz, i bardzo duży słoń
+Dlaczego jeszcze nie ma: dwóch nosorożców?
+Laj la la la la la la la /x4
+2.Zwierzęta szybko do arki szły,
+bo wielka czarna chmura była już na niebie. 
+I kropla, po kropli zaczęła padać
+lecz nie z winy zwierząt więc ocalił je.
+3.Z ulewy tej na ziemi potop był
+lecz w arce było dobrze ludziom i zwierzętom. 
+I Noe nie myślał już o nosorożcach,
+to nie jego wina, że spóźniły się.
+4.Z historii tej naukę sobie weź:
+nie spóźniaj się, gdy Pan Bóg łaski swoje daje, 
+bo spotka cię los dwóch nosorożców,
+Arka Bożej łaski odpłynie w dal.`
   }
-]
+];
