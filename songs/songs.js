@@ -6,7 +6,7 @@ const songs = [
     lyrics: `Nie ma żadnych ogłoszeń i już nie będzie. 
 Wszystkie ogłoszenia bedą podawane na bieżąco.
 
-W razie jakichkolwiek problemów z aplikacją, prosimy zgłaszać się do naszego przyjaciela Bartosza Bielawskiego.`
+W razie jakichkolwiek problemów z aplikacją, prosimy zgłaszać się do Bartosza Bielawskiego.`
   },
   {
     number: 1,
