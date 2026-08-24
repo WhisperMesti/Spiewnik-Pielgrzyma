@@ -1,5 +1,13 @@
 
 const songs = [
+    {
+    number: 0,
+    title: "!!!Ogłoszenia!!!!",
+    lyrics: `Nie ma żadnych ogłoszeń i już nie będzie. 
+Wszystkie ogłoszenia bedą podawane na bieżąco.
+
+W razie jakichkolwiek problemów z aplikacją, prosimy zgłaszać się do naszego przyjaciela Bartosza Bielawskiego.`
+  },
   {
     number: 1,
     title: "Abba,Ojcze",
@@ -1123,12 +1131,7 @@ K. Pani, wysłuchaj modlitwy nasze.
 W. A wołanie nasze niech do Ciebie przyjdzie.
 
 
-Módlmy się: Święta Maryjo, Królowo Niebieska, 
-Matko Pana naszego Jezusa Chrystusa i Pani świata, która nikogo nie opuszczasz i nikim nie gardzisz, 
-wejrzyj na nas, Pani nasza, łaskawym okiem miłosierdzia Swego i uproś nam u Syna Swego miłego odpuszczenie wszystkich grzechów naszych, 
-abyśmy, którzy teraz święte Twoje Niepokalane Poczęcie nabożnym sercem rozpamiętywamy, 
-wiecznego błogosławieństwa zapłatę w Niebie otrzymać mogli, co niechaj da Ten, któregoś Ty Panno, porodziła, Syn Twój, a Pan nasz Jezus Chrystus, 
-który z Ojcem i Duchem Świętym żyje i króluje w Trójcy Świętej Jedyny, Bóg na wieki wieków.
+Módlmy się: Święta Maryjo, Królowo Niebieska, Matko Pana naszego Jezusa Chrystusa i Pani świata, która nikogo nie opuszczasz i nikim nie gardzisz, wejrzyj na nas, Pani nasza, łaskawym okiem miłosierdzia Swego i uproś nam u Syna Swego miłego odpuszczenie wszystkich grzechów naszych, abyśmy, którzy teraz święte Twoje Niepokalane Poczęcie nabożnym sercem rozpamiętywamy, wiecznego błogosławieństwa zapłatę w Niebie otrzymać mogli, co niechaj da Ten, któregoś Ty Panno, porodziła, Syn Twój, a Pan nasz Jezus Chrystus, który z Ojcem i Duchem Świętym żyje i króluje w Trójcy Świętej Jedyny, Bóg na wieki wieków.
 
 W. Amen.
 K. Pani, wysłuchaj modlitwy nasze.
@@ -1454,8 +1457,8 @@ On chce chlebem nas nakarmić, by nasycić życia głód.`
   },
   {
     number: 67,
-    title: "1.Idziemy razem trzymamy się za ręce",
-    lyrics: `Idziemy razem trzymamy się za ręce,
+    title: "Idziemy razem trzymamy się za ręce",
+    lyrics: `1. Idziemy razem trzymamy się za ręce,
 Codzienniej głębiej poznając Boży szlak.
 A kiedy miłośc zakwitnie w sercach naszych,
 Jakże cudowny jest wtedy ten świat.
